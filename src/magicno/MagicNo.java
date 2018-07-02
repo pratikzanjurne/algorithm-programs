@@ -11,6 +11,6 @@ public class MagicNo
 	  Utility u= new  Utility();
 	  System.out.println("Enter the no that must be 2^n");
 	  number=u.getnumber();
-	  u.mogicnumber(number);
+	  u.magicnumber(number);
   }
 }

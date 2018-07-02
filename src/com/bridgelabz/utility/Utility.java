@@ -196,11 +196,10 @@ public class Utility
 		 double w =35.74+0.6215*t+(0.4275*t-35.75)*x;
 		System.out.println(" "+w);
 	}
-	public void getprime() {
+	public int getprime(int i) {
 		int x;
-		int i;
-		for(i=0;i<1000;i++)
-		{ 
+		
+		
 		for(x=2;x<i;x++)
 		{
 			if(i%x==0)
@@ -210,12 +209,14 @@ public class Utility
 		}
 		if(i==x)
 		{
-			System.out.println(x);
+			return x;
+		
 		}
-		}
+		//return 0;
+		return 0;
 		
 	}
-	public void mogicnumber(int number) 
+	public void magicnumber(int number) 
 	{
 	int upper=number;
 	int lower=0;
@@ -298,10 +299,10 @@ public class Utility
 	            if (key.compareTo(input[i]) > 0) {
 	                break;
 	            }
-	            input[i + 1] = input[i];
+	            input[i+1] = input[i];
 	            i--;
 	        }
-	        input[i + 1] = key;
+	        input[i+1] = key;
 	        System.out.println(Arrays.toString(input));
 	    }
 	    return input;
@@ -363,7 +364,7 @@ public class Utility
 	{
 		
 		String x = "";
-		String y="00000000";
+		String y="";
 		while(n>0)
 		{
 		int a=n%2;
@@ -376,12 +377,36 @@ public class Utility
         }
 		return y;
 	}
-	public int swapnibbles(int y) {
-		
-		return ((y & 0x0F)<<4 | (y & 0xF0)>>4);
+	public int swapnibbles(int y) 
+	{
+		return ((y & 00001111)<<4 | (y & 11110000)>>4);
 	}
-
+	public boolean chackAnageam(String str1, String str2) 
+	{
 	
+		
+		str1 = str1.replaceAll("\\s" ," ");
+		str2 = str2.replaceAll("\\s" ," ");
+		int  l1 = str1.length( );
+		int  l2 = str2.length( );
+		if( l1 != l2 )
+		{
+           System.out.println("Please enter equal length string for checking they are angaram or not..");
+		
+		}
 	
+		char   arr1[ ] =  str1.toLowerCase().toCharArray();
+		char   arr2[ ] =  str2.toLowerCase().toCharArray();
+		Arrays.sort( arr1 );
+		Arrays.sort( arr2 );
+            
+		
+		
+		if(Arrays.equals(arr1, arr2))
+		{
+		return true;
+		}
+		return false;
+	}
 
 }	

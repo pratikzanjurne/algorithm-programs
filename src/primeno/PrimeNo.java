@@ -8,9 +8,15 @@ public class PrimeNo
 		int value;
 		Utility u=new Utility();
 		System.out.println("Prime numbers from 0-1000 are:");
-		
-			u.getprime();
-			
+		for(int i = 0;i<1000;i++)
+		{ 
+			int x=u.getprime(i);
+			if(x!=0)
+			{
+				System.out.println(x);
+			}
+				
+		}	
 		
 	}
 }
