@@ -13,9 +13,9 @@ public class Binary {
 	   String f=u.toBinary(a);
 	   int y= Integer.parseInt(f);
 	   System.out.println(y);
-	   y=u.swapnibbles(y);
-	   String m=u.toBinary(y);
-	   System.out.println(m);
+	  int z=u.swapnibbles(y);
+	   String m=u.toBinary(z);
+	  System.out.println(z);
 	}
 
 }

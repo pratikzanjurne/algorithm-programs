@@ -10,7 +10,7 @@ public class MagicNo
 	  boolean value;
 	  Utility u= new  Utility();
 	  System.out.println("Enter the no that must be 2^n");
-	  number=u.getnumber();
+	  number=Utility.getnumber();
 	  u.magicnumber(number);
   }
 }

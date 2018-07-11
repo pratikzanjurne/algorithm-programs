@@ -12,6 +12,6 @@ public static void main(String[] args)
     data=u.getnumber();
     String[] input=u.getString(data);
     String[] result=u.insertionsort(input,data);
-    System.out.println(Arrays.toString(input));
+    //System.out.println(Arrays.toString(input));
 }
 }

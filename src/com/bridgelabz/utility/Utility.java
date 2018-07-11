@@ -254,7 +254,7 @@ public class Utility
 	
 		
 	}
-	public void bubblesort(int[] arr) 
+	public int[] bubblesort(int[] arr) 
 	{
 		int i,j;
 		int n=arr.length;
@@ -275,6 +275,7 @@ public class Utility
 		{
 			System.out.println(arr[i]);
 		}
+		return arr;
 	}
 	public String[] getString(int data) {
 		String string[]=new String[data];
@@ -362,7 +363,7 @@ public class Utility
 	}
 	public String toBinary(int n) 
 	{
-		
+
 		String x = "";
 		String y="";
 		while(n>0)
@@ -379,7 +380,7 @@ public class Utility
 	}
 	public int swapnibbles(int y) 
 	{
-		return ((y & 00001111)<<4 | (y & 11110000)>>4);
+		return ((y & 0x0F)<<4 | (y & 0xF0)>>4);
 	}
 	public boolean chackAnageam(String str1, String str2) 
 	{
@@ -391,6 +392,7 @@ public class Utility
 		int  l2 = str2.length( );
 		if( l1 != l2 )
 		{
+			
            System.out.println("Please enter equal length string for checking they are angaram or not..");
 		
 		}
@@ -408,5 +410,175 @@ public class Utility
 		}
 		return false;
 	}
+
+	public void checkanagramno(int[] prime) 
+	{
+	  int i=0;
+	  for(i=0;i<prime.length;i++)
+	  {
+		  
+	  }
+		
+	}
+	public boolean binarysearchInt(int[] array, int number) 
+	{
+		int upper=array.length;
+		int lower=0;
+		int x=array.length;
+		int middle=(upper+lower)/2;
+		for(int i=0;i<array.length;i++)
+	    {
+	    	if(number>array[middle])
+	    	{
+	    		lower=middle;
+	    	}
+	    	else if(number==array[middle])
+	    	{
+	    		return true;
+	    	}
+	    	else if(number<array[middle])
+	    	{
+	    		upper=middle;
+	    	}
+	    	while(x>0)
+	    	{
+	    		middle=(upper+lower)/2;
+	    		x--;
+	    		break;
+	    	}
+	    }
+		return false;
+	}
+	public boolean binarysearchStr(String[] str, String str1) 
+	{
+		int upper=str.length;
+		int lower=0;
+		int x=str.length;
+		int middle=(upper+lower)/2;
+		for(int i=0;i<str.length;i++)
+	    {
+	    	if(str1.compareTo(str[middle])>0)
+	    	{
+	    		lower=middle;
+	    	}
+	    	else if(str1.equals(str[middle]))
+	    	{
+	    		return true;
+	    	}
+	    	else if(str1.compareTo(str[middle])<0)
+	    	{
+	    		upper=middle;
+	    	}
+	    	while(x>0)
+	    	{
+	    		middle=(upper+lower)/2;
+	    		x--;
+	    		break;
+	    	}
+	    }
+		return false;
+	}
+	public int[] insertionsortInt(int[] input, int data) 
+	{
+		int i,j;
+		int key;
+		System.out.println(Arrays.toString(input));
+	    for (j = 1; j < data; j++) {
+	        key = input[j];
+	        i = j - 1;
+	        while (i >= 0) {
+	            if (key>input[i]) {
+	                break;
+	            }
+	            input[i+1] = input[i];
+	            i--;
+	        }
+	        input[i+1] = key;
+	        System.out.println(Arrays.toString(input));
+	    }
+	    return input;
+	}
+	public void bubblesortStr(String[] arr) 
+	{
+		
+		int i,j;
+		int n=arr.length;
+		for(i=0;i<n-1;i++)
+		{
+			for(j=0;j<n-i-1;j++)
+			{
+				if(arr[j].compareTo(arr[j+1])>0)
+				{
+				String temp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=temp;
+				}
+			}
+		}
+		System.out.println("Sorted array is = ");
+		for(i=0;i<n;i++)
+		{
+			System.out.println(arr[i]);
+		}
+		
+	}
+    public static void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+    public void merge(int arr[], int lower, int middle, int upper)
+    {
+        
+        int n1 = middle - lower + 1;
+        int n2 = upper - middle;
+        int L[] = new int [n1];
+        int R[] = new int [n2];
+        for (int i=0; i<n1; ++i)
+            L[i] = arr[lower + i];
+        for (int j=0; j<n2; ++j)
+            R[j] = arr[middle + 1+ j];
+        int i = 0, j = 0;
+        int k = lower;
+        while (i < n1 && j < n2)
+        {
+            if (L[i] <= R[j])
+            {
+                arr[k] = L[i];
+                i++;
+            }
+            else
+            {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+         while (i < n1)
+        {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+         while (j < n2)
+        {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+ 
+    public void mergesort(int arr[], int lower, int upper)
+    {
+        if (lower < upper)
+        {
+        	int middle = (lower+upper)/2;
+            mergesort(arr, lower, middle);
+            mergesort(arr , middle+1, upper);
+            merge(arr, lower, middle, upper);
+        }
+    }
 
 }	

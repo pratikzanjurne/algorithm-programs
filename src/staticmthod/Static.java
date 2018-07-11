@@ -1,5 +1,8 @@
 package staticmthod;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 import com.bridgelabz.utility.Utility;
 
 public class Static 
@@ -20,27 +23,70 @@ public class Static
 	   {
 	   case 1:
 	   {
-		   
+		   int array[]= {1,2,3,4,5,6,7,8,9};
+		   array=u.bubblesort(array);
+		   System.out.println("Enter the integer you want to search");
+		   int number=u.getnumber();
+		   boolean result=u.binarysearchInt(array,number);
+		   if(result==true)
+		   {
+			   System.out.println("The integer is found");
+		   }else
+			   System.out.println("The integer is not found");
+		   break;
 	   }
 	   case 2:
 	   {
 		   
+		String str[]= {"a","b","c","d","f","z"};
+		str=u.insertionsort(str, 6);
+		System.out.println("Enter the string you want to search");
+		String str1=u.ipstring();
+		boolean result=u.binarysearchStr(str,str1);
+		if(result==true)
+		{
+			System.out.println("The string is found");
+		}else
+			System.out.println("The string is not found");
+		break;
 	   }
 	   case 3:
 	   {
-		   
+		    int data;
+		    System.out.println("Enter Array size");
+		    data=u.getnumber();
+		    int[] input=u.getArray(data);
+		    int[] result=u.insertionsortInt(input,data);
+		   // System.out.println(Arrays.toString(input));
+		    break;
 	   }
 	   case 4:
 	   {
-		   
+		    int data;
+		    System.out.println("Enter string element size");
+		    data=u.getnumber();
+		    String[] input=u.getString(data);
+		    String[] result=u.insertionsort(input,data);
+		   // System.out.println(Arrays.toString(input));
+		    break;
 	   }
 	   case 5:
 	   {
-		   
+		    int arr[];
+			System.out.println("Enter size of your array");
+			int a=u.getnumber();
+			arr=u.getArray(a);
+			u.bubblesort(arr);
+			break;
 	   }
 	   case 6:
 	   {
-		   
+		    String arr[];
+			System.out.println("Enter size of your string");
+			int a=u.getnumber();
+			arr=u.getString(a);
+			u.bubblesortStr(arr);
+			break;
 	   }
 	   }
 	   
